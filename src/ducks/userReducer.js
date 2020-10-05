@@ -17,25 +17,12 @@ export const requestUserData = () => {
   }
 
 function reducer(state = initialState, action){
-    switch(action.type){
+    switch (action.type){
         case REQUEST_USER_DATA + '_FULFILLED':
             const {email, firstNName, lastName} = action.payload.user
         return {email, firstNName, lastName}
         default:
             return state;
     }
-    
 }
 export default reducer
-
-
-export default function reducer(state = initialState, action) {
-
-  switch (action.type) {
-    case REQUEST_USER_DATA + '_FULFILLED':
-      const { email, firstName, lastName } = action.payload.user
-      return { email, firstName, lastName };
-    default:
-      return state;
-  }
-}
